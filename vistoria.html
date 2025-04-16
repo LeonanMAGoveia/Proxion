@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório de Manutenção Preventiva</title>
+    <link rel="stylesheet" href="./css/vistoria.css">
+</head>
+<body>
+    <div class="page-wrapper">
+
+        <div class="container">
+            <div class="header">
+                <div class="header-overlay"></div>
+                <div class="network-element circle1"></div>
+                <div class="network-element circle2"></div>
+                <div class="network-element circle3"></div>
+                <div class="network-element circle4"></div>
+                <div class="network-element circle5"></div>
+                <div class="tech-icon icon1"></div>
+                <div class="tech-icon icon2"></div>
+                <div class="tech-icon icon3"></div>
+                <div class="tech-icon icon4"></div>
+                <div class="tech-icon icon5"></div>
+                <div class="title">
+                    <h1>MANUTENÇÃO<br>PREVENTIVA</h1>
+                    <p>Relatório de Serviço - Proxion Solutions</p>
+                </div>
+                <div class="divider"></div>
+            </div>
+
+            <main class="content">
+                <div class="section client-info">
+                    <div class="section-header">Informações do Cliente</div>
+                    <div class="section-body">
+                        <form id="clientForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="clientName">Nome do Cliente:</label>
+                                    <input type="text" id="clientName" name="clientName">
+                                </div>
+                                <div class="form-group">
+                                    <label for="clientCode">Código do Cliente:</label>
+                                    <input type="text" id="clientCode" name="clientCode">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Endereço:</label>
+                                <input type="text" id="address" name="address">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="city">Cidade:</label>
+                                    <input type="text" id="city" name="city">
+                                </div>
+                                <div class="form-group">
+                                    <label for="state">Estado:</label>
+                                    <input type="text" id="state" name="state">
+                                </div>
+                                <div class="form-group">
+                                    <label for="zipCode">CEP:</label>
+                                    <input type="text" id="zipCode" name="zipCode">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="contactName">Contato:</label>
+                                    <input type="text" id="contactName" name="contactName">
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Telefone:</label>
+                                    <input type="text" id="phone" name="phone">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email:</label>
+                                    <input type="email" id="email" name="email">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="serviceDate">Data do Serviço:</label>
+                                    <input type="date" id="serviceDate" name="serviceDate">
+                                </div>
+                                <div class="form-group">
+                                    <label for="reportNumber">Nº do Relatório:</label>
+                                    <input type="text" id="reportNumber" name="reportNumber">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="columns">
+                    <div class="column">
+                        <div class="section">
+                            <div class="section-header">Equipamentos</div>
+                            <div class="section-body">
+                                <form id="equipmentForm">
+                                    <div id="equipmentList">
+                                        <div class="equipment-item">
+                                             <div class="form-group">
+                                                 <label for="equipment1">Equipamento:</label>
+                                                 <input type="text" id="equipment1" name="equipment1">
+                                             </div>
+                                             <div class="form-row">
+                                                 <div class="form-group">
+                                                     <label for="model1">Modelo:</label>
+                                                     <input type="text" id="model1" name="model1">
+                                                 </div>
+                                                 <div class="form-group">
+                                                     <label for="serialNumber1">Nº de Série:</label>
+                                                     <input type="text" id="serialNumber1" name="serialNumber1">
+                                                 </div>
+                                             </div>
+                                             <div class="form-group">
+                                                 <label for="location1">Localização:</label>
+                                                 <input type="text" id="location1" name="location1">
+                                             </div>
+                                              <div class="form-group">
+                                                 <label for="status1">Status do Equipamento:</label>
+                                                 <input type="text" id="status1" name="status1">
+                                             </div>
+                                        </div>
+                                        <div class="equipment-item">
+                                              <div class="form-group">
+                                                 <label for="equipment2">Equipamento:</label>
+                                                 <input type="text" id="equipment2" name="equipment2">
+                                             </div>
+                                             <div class="form-row">
+                                                 <div class="form-group">
+                                                     <label for="model2">Modelo:</label>
+                                                     <input type="text" id="model2" name="model2">
+                                                 </div>
+                                                 <div class="form-group">
+                                                     <label for="serialNumber2">Nº de Série:</label>
+                                                     <input type="text" id="serialNumber2" name="serialNumber2">
+                                                 </div>
+                                             </div>
+                                             <div class="form-group">
+                                                 <label for="location2">Localização:</label>
+                                                 <input type="text" id="location2" name="location2">
+                                             </div>
+                                             <div class="form-group">
+                                                  <label for="status2">Status do Equipamento:</label> <input type="text" id="status2" name="status2">
+                                              </div>
+                                        </div>
+                                    </div>
+                                    <button type="button" id="addEquipment" class="btn-add">+ Adicionar Equipamento</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column">
+                        <div class="section">
+                            <div class="section-header">Serviços Realizados</div>
+                            <div class="section-body">
+                                <form id="servicesForm">
+                                    <div id="servicesList">
+                                         <div class="service-item">
+                                            <div class="form-group">
+                                                 <label for="serviceType1">Tipo de Serviço:</label>
+                                                 <select id="serviceType1" name="serviceType1">
+                                                     <option value="">Selecione</option>
+                                                     <option value="limpeza">Limpeza</option>
+                                                     <option value="atualizacao">Atualização de Software</option>
+                                                     <option value="substituicao">Substituição de Peças</option>
+                                                     <option value="configuracao">Configuração</option>
+                                                     <option value="teste">Teste de Funcionamento</option>
+                                                     <option value="outro">Outro</option>
+                                                 </select>
+                                             </div>
+                                             <div class="form-group">
+                                                 <label for="serviceDesc1">Descrição:</label>
+                                                 <textarea id="serviceDesc1" name="serviceDesc1"></textarea>
+                                             </div>
+                                        </div>
+                                         <div class="service-item">
+                                            <div class="form-group">
+                                                 <label for="serviceType2">Tipo de Serviço:</label>
+                                                 <select id="serviceType2" name="serviceType2">
+                                                     <option value="">Selecione</option>
+                                                     <option value="limpeza">Limpeza</option>
+                                                     <option value="atualizacao">Atualização de Software</option>
+                                                     <option value="substituicao">Substituição de Peças</option>
+                                                     <option value="configuracao">Configuração</option>
+                                                     <option value="teste">Teste de Funcionamento</option>
+                                                     <option value="outro">Outro</option>
+                                                 </select>
+                                             </div>
+                                             <div class="form-group">
+                                                 <label for="serviceDesc2">Descrição:</label>
+                                                 <textarea id="serviceDesc2" name="serviceDesc2"></textarea>
+                                             </div>
+                                        </div>
+                                    </div>
+                                    <button type="button" id="addService" class="btn-add">+ Adicionar Serviço</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-header">Observações e Assinaturas</div>
+                    <div class="section-body">
+                        <form id="notesForm">
+                            <div class="form-group">
+                                <label for="additionalNotes">Observações Adicionais:</label>
+                                <textarea id="additionalNotes" name="additionalNotes"></textarea>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="technicianName">Nome do Técnico:</label>
+                                    <input type="text" id="technicianName" name="technicianName">
+                                </div>
+                                <div class="form-group">
+                                    <label for="clientSignature">Assinatura do Cliente:</label>
+                                    <input type="text" id="clientSignature" name="clientSignature" placeholder="Nome ou rubrica para confirmação">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="action-buttons-container">
+                    <button type="button" id="submitReport">Salvar Relatório</button>
+                    <button type="button" id="newReport">Novo Relatório</button>
+                </div>
+
+            </main> </div> <footer class="footer">
+            © 2025 Proxion Solutions - Relatório de Manutenção Preventiva
+        </footer>
+
+    </div> <script src="vistoria-script.js"></script>
+</body>
+</html>

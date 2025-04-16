@@ -1,0 +1,347 @@
+/* === Variáveis Globais === */
+:root {
+    --primary-color: #00ABAB; /* Verde/Azul Principal */
+    --secondary-color: #009999; /* Verde/Azul Secundário (Header Base) */
+    --accent-color: #008080; /* Cor para Hover do Botão */
+    --light-bg-color: #F5F5F5; /* Fundo das Seções */
+    --white-color: #ffffff;
+    --text-color-dark: #333333;
+    --border-color-light: #dddddd;
+    --font-stack: Arial, Helvetica, sans-serif;
+    --base-font-size: 13px; /* Levemente aumentado para melhor leitura */
+    --header-height: 220px;
+    --border-radius-small: 4px;
+    --border-radius-medium: 5px;
+    --border-radius-large: 8px;
+    --content-padding: 25px; /* Variável para padding lateral */
+}
+
+/* === Reset Básico e Estilos Globais === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-stack);
+}
+
+html, body {
+    height: 100%; /* Necessário para min-height 100vh funcionar bem em alguns casos */
+}
+
+body {
+    background-color: var(--white-color);
+    color: var(--text-color-dark);
+    line-height: 1.5; /* Melhora legibilidade */
+}
+
+/* === Layout Principal (Full Height) === */
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante altura mínima total */
+}
+
+.container {
+    width: 100%;
+    /* max-width: 800px; */ /* REMOVIDO max-width */
+    margin: 0 auto;
+    padding: 0 var(--content-padding); /* Adicionado padding lateral */
+    position: relative;
+}
+
+/* ========================== */
+/* === Seção do Cabeçalho === */
+/* ========================== */
+.header {
+    background-color: var(--secondary-color);
+    height: var(--header-height);
+    position: relative;
+    overflow: hidden;
+    /* Remove padding lateral do container pai para ir de ponta a ponta */
+    margin-left: calc(-1 * var(--content-padding));
+    margin-right: calc(-1 * var(--content-padding));
+}
+/* Ajusta o container interno do header para respeitar o padding original */
+.header > * {
+     margin-left: var(--content-padding);
+     margin-right: var(--content-padding);
+     /* Cuidado: Isso pode afetar elementos posicionados absolutamente se não ajustados */
+}
+/* Ajuste específico para elementos que devem ignorar o padding */
+.header-overlay, .divider, .connection-lines /* Adicionar outros se necessário */ {
+     margin-left: 0;
+     margin-right: 0;
+     left: 0; /* Garante que comecem na borda */
+     width: 100%;
+}
+
+
+.header-overlay {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    background-color: var(--primary-color);
+    opacity: 0.7;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+}
+
+/* --- Elementos Gráficos (Círculos) --- */
+.network-element {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    /* Posições relativas ao header */
+}
+.circle1 { width: 60px; height: 60px; top: 60px; right: calc(100px + var(--content-padding)); } /* Ajusta posição */
+.circle2 { width: 80px; height: 80px; top: 150px; left: calc(180px + var(--content-padding)); } /* Ajusta posição */
+.circle3 { width: 70px; height: 70px; top: 100px; left: calc(500px + var(--content-padding)); } /* Ajusta posição */
+.circle4 { width: 50px; height: 50px; top: 70px; left: calc(90px + var(--content-padding)); } /* Ajusta posição */
+.circle5 { width: 40px; height: 40px; top: 190px; left: calc(600px + var(--content-padding)); } /* Ajusta posição */
+
+
+/* --- Ícones Tecnológicos (Placeholders) --- */
+.tech-icon {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+.icon1 { width: 30px; height: 30px; border-radius: 15px; top: 150px; left: calc(180px + var(--content-padding)); } /* Ajusta posição */
+.icon2 { width: 30px; height: 30px; border-radius: var(--border-radius-medium); top: 55px; left: calc(75px + var(--content-padding)); } /* Ajusta posição */
+.icon3 { width: 30px; height: 30px; border-radius: 15px; top: 85px; left: calc(485px + var(--content-padding)); } /* Ajusta posição */
+.icon4 { width: 30px; height: 30px; border-radius: var(--border-radius-medium); top: 45px; left: calc(685px + var(--content-padding)); } /* Ajusta posição */
+.icon5 { width: 30px; height: 30px; border-radius: 15px; top: 175px; left: calc(585px + var(--content-padding)); } /* Ajusta posição */
+
+
+/* --- Título no Cabeçalho --- */
+.title {
+    position: absolute;
+    top: 30px;
+    left: calc(60px + var(--content-padding)); /* Ajusta posição */
+    color: var(--white-color);
+    z-index: 1;
+}
+.title h1 { font-size: 36px; font-weight: bold; line-height: 1.4; }
+.title p { font-size: 18px; margin-top: 10px; }
+
+/* --- Divisor Diagonal Branco --- */
+.divider {
+    position: absolute;
+    bottom: 0;
+    height: 5px;
+    background-color: var(--white-color);
+    transform: skewY(-1deg);
+    transform-origin: left;
+    z-index: 1;
+}
+
+/* ================================== */
+/* === Conteúdo Principal (<main>) === */
+/* ================================== */
+.content {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    flex-grow: 1; /* Faz esta seção crescer para ocupar espaço vertical */
+}
+
+.section {
+    background-color: var(--light-bg-color);
+    border-radius: var(--border-radius-medium);
+    margin-bottom: 25px; /* Aumentado espaço entre seções */
+    overflow: hidden;
+    border: 1px solid var(--border-color-light); /* Adicionada borda sutil */
+}
+
+.section-header {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 10px 15px; /* Ajustado padding */
+    font-weight: bold;
+    font-size: 15px; /* Levemente aumentado */
+    border-bottom: 1px solid var(--accent-color); /* Linha sutil abaixo */
+}
+
+.section-body {
+    padding: 20px; /* Aumentado padding interno */
+}
+
+/* ======================= */
+/* === Estilos de Forms === */
+/* ======================= */
+.form-group {
+    margin-bottom: 18px; /* Aumentado espaço */
+}
+
+label {
+    display: block;
+    font-size: var(--base-font-size);
+    color: var(--text-color-dark);
+    margin-bottom: 6px; /* Aumentado espaço */
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="email"], /* Adicionado tipo email */
+textarea,
+select {
+    width: 100%;
+    padding: 10px; /* Aumentado padding */
+    border: 1px solid var(--border-color-light);
+    border-radius: var(--border-radius-small);
+    font-size: var(--base-font-size);
+    background-color: var(--white-color);
+    color: var(--text-color-dark);
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="email"]:focus, /* Adicionado tipo email */
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 171, 171, 0.25); /* Sombra um pouco maior */
+}
+
+textarea {
+    height: 80px;
+    resize: vertical;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px; /* Aumentado gap */
+    margin-bottom: 18px; /* Aumentado espaço */
+    flex-wrap: wrap;
+}
+
+.form-row > div {
+    flex: 1;
+    min-width: 180px; /* Ajustado min-width */
+}
+
+.equipment-item,
+.service-item {
+    background-color: var(--white-color);
+    padding: 15px; /* Aumentado padding */
+    border: 1px solid var(--border-color-light);
+    border-radius: var(--border-radius-small);
+    margin-bottom: 15px; /* Aumentado espaço */
+    position: relative; /* Para possível botão de remover */
+}
+
+/* Layout de Colunas */
+.columns {
+    display: flex;
+    gap: 25px; /* Aumentado gap */
+    flex-wrap: wrap;
+}
+
+.column {
+    flex: 1;
+    min-width: calc(50% - 15px); /* Tenta manter 2 colunas por mais tempo */
+}
+
+/* Botões */
+button, .btn { /* Classe genérica .btn adicionada */
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    padding: 10px 20px; /* Ajustado padding */
+    border-radius: var(--border-radius-small);
+    cursor: pointer;
+    font-size: calc(var(--base-font-size) + 1px); /* Levemente maior */
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease; /* Adicionada transição de transform */
+    text-align: center;
+}
+
+button:hover, .btn:hover {
+    background-color: var(--accent-color);
+}
+button:active, .btn:active {
+     transform: scale(0.98); /* Efeito de clique */
+}
+
+
+/* Botões de Adicionar */
+.btn-add {
+    display: block; /* Ocupa linha inteira */
+    width: 100%;
+    margin-top: 15px;
+    background-color: #e8f6f6; /* Cor mais suave */
+    color: var(--primary-color);
+    border: 1px dashed var(--primary-color);
+}
+.btn-add:hover {
+    background-color: #d1eded;
+    color: var(--accent-color);
+}
+
+/* Container dos botões de ação no final */
+.action-buttons-container {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end; /* Alinha à direita por padrão */
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color-light); /* Separador */
+}
+.action-buttons-container button {
+     min-width: 150px; /* Largura mínima */
+}
+
+
+/* ================== */
+/* === Rodapé === */
+/* ================== */
+.footer {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    text-align: center;
+    padding: 20px var(--content-padding); /* Aumentado padding e usa variável */
+    font-size: var(--base-font-size);
+    /* margin-top não é mais necessário com flex-grow no content */
+}
+
+/* ========================= */
+/* === Media Queries (Exemplo) === */
+/* ========================= */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px; /* Reduz padding lateral em telas menores */
+    }
+    .header {
+         margin-left: -15px;
+         margin-right: -15px;
+          /* Considerar simplificar ou esconder elementos gráficos complexos */
+    }
+     .header > * {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+     /* Ajustar posições dos elementos gráficos se necessário */
+     .title { left: calc(15px + 15px); } /* Ajusta pos. do título */
+
+    .content {
+        padding: 20px 0; /* Remove padding lateral interno do content */
+    }
+    .form-row {
+        gap: 10px;
+    }
+    .columns {
+        flex-direction: column; /* Colunas empilham */
+        gap: 0; /* Remove gap entre colunas empilhadas */
+    }
+     .column {
+         min-width: 100%;
+     }
+     .action-buttons-container {
+         flex-direction: column; /* Botões empilham */
+         align-items: stretch; /* Fazem ocupar largura */
+     }
+      .action-buttons-container button {
+         width: 100%;
+     }
+}

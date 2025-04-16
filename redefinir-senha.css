@@ -1,0 +1,173 @@
+/* CSS Completo e Corrigido para: css/redefinir-senha.css */
+
+/* =========================================== */
+/* === ESTILOS BÁSICOS (COPIADOS DO LOGIN) === */
+/* =========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif; /* Escolha uma fonte melhor depois */
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5; /* Um cinza claro parecido com o fundo */
+}
+
+/* Container Principal */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Espaçamento caso a tela seja muito pequena */
+}
+
+/* Caixa Branca */
+.login-box {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 360px; /* Largura máxima da caixa */
+}
+
+/* Logo */
+.logo {
+    max-width: 80px; /* Ajuste o tamanho conforme necessário */
+    margin-bottom: 30px;
+}
+
+/* Formulário (Adapte ID se necessário) */
+#forgot-password-form, /* ID do form de redefinir senha */
+#login-form {          /* ID do form de login (se reutilizar) */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+/* Estilo dos Inputs (Incluindo email) */
+input[type="text"],
+input[type="password"],
+input[type="email"] { /* Adicionado tipo email */
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc; /* Borda suave */
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.2s ease-in-out;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus { /* Adicionado tipo email */
+    outline: none;
+    border-color: #00a99d; /* Muda a cor da borda ao focar */
+}
+
+/* Botão Principal (Reutilizado) */
+.btn-login {
+    background-color: #00a99d; /* Cor verde/azul baseada na imagem */
+    color: #ffffff;
+    border: none;
+    padding: 12px 15px;  /* Padding base */
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    margin-top: 10px; /* Espaço acima do botão */
+    width: 100%;
+    /* Removi as linhas comentadas com // que estavam aqui antes */
+}
+
+.btn-login:hover {
+    background-color: #008a7d; /* Um tom ligeiramente mais escuro para o hover */
+}
+
+/* Mensagem de Erro */
+.error-message {
+    color: #d93025; /* Cor vermelha para erros */
+    font-size: 0.9rem;
+    margin-top: 15px;
+    text-align: center;
+    width: 100%;
+}
+
+/* Classe para esconder labels visualmente */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* ================================================ */
+/* === ESTILOS ESPECÍFICOS P/ REDEFINIR SENHA === */
+/* ================================================ */
+
+.login-box h3 { /* Estilo para o título "Redefinir Senha" */
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.login-box .instructions { /* Estilo para o parágrafo de instruções */
+    font-size: 0.9rem;
+    color: #666;
+    text-align: center;
+    margin-bottom: 25px;
+    line-height: 1.4;
+}
+
+.confirmation-message { /* Estilo para a caixa de confirmação verde */
+    color: #28a745; /* Verde sucesso */
+    font-size: 0.9rem;
+    margin-top: 15px;
+    text-align: center;
+    width: 100%; /* <--- CORRIGIDO AQUI */
+    background-color: #e9f7ec; /* Fundo verde claro */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #b8e0c1; /* Borda verde suave */
+}
+
+.back-to-login { /* Estilo para o link 'Voltar para o Login' */
+    color: #00a99d; /* Cor primária */
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-top: 20px;
+    display: inline-block; /* Para aplicar margem */
+    transition: color 0.2s ease-in-out;
+}
+
+.back-to-login:hover {
+    color: #008a7d; /* Escurece no hover */
+    text-decoration: underline;
+}
+
+/* Ajuste específico para o botão NA PÁGINA DE REDEFINIR SENHA */
+/* (Sobrescreve ou adiciona ao .btn-login base se necessário) */
+#forgot-password-form .btn-login { /* Seletor mais específico para garantir */
+     white-space: normal; /* Permite quebra de linha se necessário */
+     line-height: 1.3;
+     padding: 12px 15px; /* Garante padding */
+}

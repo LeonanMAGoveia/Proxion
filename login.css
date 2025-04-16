@@ -1,0 +1,128 @@
+/* Reset básico e Estilos Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif; /* Escolha uma fonte melhor depois */
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5; /* Um cinza claro parecido com o fundo */
+}
+
+/* Container Principal do Login */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Espaçamento caso a tela seja muito pequena */
+}
+
+/* Caixa Branca do Login */
+.login-box {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 360px; /* Largura máxima da caixa */
+}
+
+/* Logo */
+.logo {
+    max-width: 80px; /* Ajuste o tamanho conforme necessário */
+    margin-bottom: 30px;
+}
+
+/* Formulário */
+#login-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+/* Estilo dos Inputs */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc; /* Borda suave */
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.2s ease-in-out;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: #00a99d; /* Muda a cor da borda ao focar */
+}
+
+/* Botão de Login */
+.btn-login {
+    background-color: #00a99d; /* Cor verde/azul baseada na imagem */
+    color: #ffffff;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    margin-top: 10px; /* Espaço acima do botão */
+    width: 100%;
+}
+
+.btn-login:hover {
+    background-color: #008a7d; /* Um tom ligeiramente mais escuro para o hover */
+}
+
+/* Link "Esqueceu a senha?" */
+.forgot-password {
+    color: #00a99d; /* Mesma cor do botão */
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-top: 20px;
+    transition: color 0.2s ease-in-out;
+}
+
+.forgot-password:hover {
+    color: #008a7d; /* Escurece no hover */
+    text-decoration: underline;
+}
+
+/* Mensagem de Erro (Inicialmente oculta) */
+.error-message {
+    color: #d93025; /* Cor vermelha para erros */
+    font-size: 0.9rem;
+    margin-top: 15px;
+    text-align: center;
+    width: 100%;
+}
+
+
+/* Classe para esconder labels visualmente, mas manter para leitores de tela */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+

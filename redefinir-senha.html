@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redefinir Senha - Proxion Solutions</title>
+    <link rel="stylesheet" href="./css/redefinir-senha.css">
+</head>
+<body>
+    <div class="login-container"> <div class="login-box"> <img src="./assets/img/proxion-logo.jpg" alt="Logo Proxion Solutions" class="logo">
+
+            <h3>Redefinir Senha</h3>
+            <p class="instructions">
+                Digite seu e-mail cadastrado abaixo. Se ele for encontrado em nosso sistema,
+                enviaremos um link para você criar uma nova senha.
+            </p>
+
+            <form id="forgot-password-form">
+                <div class="input-group">
+                    <label for="email" class="sr-only">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="Seu e-mail" required>
+                </div>
+
+                <button type="submit" class="btn-login">Enviar Link de Redefinição</button>
+            </form>
+
+            <div id="confirmation-message" class="confirmation-message" style="display: none;"></div>
+            <div id="error-message" class="error-message" style="display: none;"></div>
+
+
+            <a href="login.html" class="back-to-login">Voltar para o Login</a> </div>
+    </div>
+
+    <script src="./js/redefinir-senha.js"></script>
+</body>
+</html>
